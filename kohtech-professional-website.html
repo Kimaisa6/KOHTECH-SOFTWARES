@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KOHTECH SOFTWARES AND SECURITY SOLUTIONS - Professional CCTV Installation, ICT Consultation, Security Systems, Networking, and Point of Sale Solutions in Kenya">
+    <title>KOHTECH | Softwares & Security Solutions Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a5490;
+            --secondary-color: #0d3a6b;
+            --accent-color: #ff6b35;
+            --dark-bg: #0a1929;
+            --light-bg: #f5f7fa;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-bg);
+            color: white;
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-left {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .top-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .top-bar-item i {
+            color: var(--accent-color);
+        }
+
+        .top-bar-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10,25,41,0.9) 0%, rgba(13,58,107,0.9) 100%), 
+                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect fill="%231a5490" width="100" height="100"/></svg>');
+            color: white;
+            padding: 120px 2rem 80px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin: 0.5rem 0 1rem;
+            color: var(--secondary-color);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26,84,144,0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .why-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(26,84,144,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .why-icon i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .why-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .why-item p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 2rem;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .cta-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 2rem;
+            background: white;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 2rem;
+            background: var(--light-bg);
+        }
+
+        .testimonial-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-rating {
+            color: #ffa500;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26,84,144,0.3);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            margin: 0.5rem 0;
+            transition: opacity 0.3s;
+        }
+
+        .contact-card a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-card p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37,211,102,0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37,211,102,0.6);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .top-bar-left {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <div class="top-bar-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+254750818748/+254768973995">0750 818 748/0768 973 995</a>
+                </div>
+                <div class="top-bar-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@kohtech.co.ke">info@kohtech.co.ke</a>
+                </div>
+            </div>
+            <div class="top-bar-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Kisii, Kenya</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">KOH<span>TECH</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>KOHTECH SOFTWARES AND SECURITY SOLUTIONS</h1>
+            <p class="tagline">Professional CCTV Installation, ICT Consultation & Security Systems in Kenya</p>
+            <div class="cta-buttons">
+                <a href="tel:+254750818748" class="cta-button cta-primary">Call 0750 818 748/0768 973 995</a>
+                <a href="#services" class="cta-button cta-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-tag">OUR SERVICES</div>
+            <h2 class="section-title">Comprehensive Security & ICT Solutions</h2>
+            <p class="section-subtitle">Offering top-rated security installation services, ICT consultation, and technology solutions across Kenya</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>CCTV Installation & Security</h3>
+                <p>Professional CCTV camera installation and surveillance systems for homes and businesses. High-definition monitoring with remote access, night vision, and 24/7 recording capabilities for complete security coverage.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>ICT Consultation</h3>
+                <p>Expert technology consulting to help your business leverage cutting-edge ICT solutions. Strategic planning, digital transformation, system optimization, and technology roadmap development for sustainable growth.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Systems</h3>
+                <p>Comprehensive security infrastructure including access control systems, alarm systems, biometric systems, and integrated security platforms. Protecting your assets with state-of-the-art technology and monitoring.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>Networking Solutions</h3>
+                <p>Design, installation, and maintenance of robust network infrastructure. Enterprise-grade LAN/WAN setups, wireless networks, structured cabling, and network security for seamless connectivity and performance.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h3>Point of Sale Systems</h3>
+                <p>Complete point of supply distribution and installation services. Reliable electrical distribution systems, power backup solutions, UPS installations, and energy management tailored to your requirements.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Installation & Support</h3>
+                <p>Professional installation services and ongoing technical support to keep your systems running smoothly. Fast response times, preventive maintenance, and expert troubleshooting to minimize downtime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">97%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="about">
+        <div class="section-header">
+            <div class="section-tag">WHY CHOOSE US</div>
+            <h2 class="section-title">Professional CCTV & Security Systems Installation</h2>
+            <p class="section-subtitle">KOHTECH is an accredited specialist in CCTV installation and security systems in Kenya, with over 10 years' experience in both domestic and commercial sectors</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h4>Certified Technicians</h4>
+                <p>Highly experienced and accredited installers to guide and assist with your requirements</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4>Quality Equipment</h4>
+                <p>Partnered with leading brands for latest equipment to protect your property</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h4>24/7 Support</h4>
+                <p>Round-the-clock technical assistance and monitoring services</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Guaranteed Security</h4>
+                <p>Professional solutions with comprehensive warranties for peace of mind</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <h2>Ready to Secure What Matters Most?</h2>
+        <p>Get a free security consultation and custom quote for your home or business</p>
+        <div class="cta-buttons">
+            <a href="tel:+254750818748" class="cta-button cta-primary">Call 0750 818 748/0768 973 995</a>
+            <a href="https://wa.me/254768973995" target="_blank" class="cta-button cta-secondary">WhatsApp Us</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-tag">TESTIMONIALS</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Requested quote from KOHTECH for a 16 camera setup in our office. Feedback was quick with significant savings. Camera and install quality very good, engineers helpful and professional. The images are excellent and available from mobile. Very good value!"</p>
+                <div class="testimonial-author">- Patel Aggrey</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"KOHTECH installed our complete security system over a year ago and I'm pleased to say no problems. Price was very competitive. Installation completed in timely manner with superb results. Their support is outstanding!"</p>
+                <div class="testimonial-author">- Steve M., Karen</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-rating">★★★★★</div>
+                <p class="testimonial-text">"Professional service from start to finish. The team was knowledgeable, efficient, and respectful of our premises. Our security system works flawlessly and we feel much safer. Highly recommend KOHTECH!"</p>
+                <div class="testimonial-author">- Sylviah Chirchir</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <div class="section-tag">GET IN TOUCH</div>
+            <h2 class="section-title">Contact KOHTECH Security Systems</h2>
+            <p class="section-subtitle">Need CCTV installation services or have a question? Get in touch with us today</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>WhatsApp</h3>
+                <a href="https://wa.me/254768973995" target="_blank">0768 973 995</a>
+                <p>Quick response & instant quotes</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <a href="tel:+254750818748">0750 818 748/0768 973 995</a>
+                <p>Available 24/7 for emergencies</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3>Twitter</h3>
+                <a href="https://twitter.com/thatkimaisa" target="_blank">@thatkimaisa</a>
+                <p>Follow for updates & tips</p>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:info@kohtech.co.ke">info@kohtech.co.ke</a>
+                <p>Send us your requirements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About KOHTECH</h3>
+                <p>KOHTECH is an accredited specialist CCTV installation company in Kenya, with over 10 years' experience in both domestic and commercial sectors. We are a comprehensive provider of security systems, ICT solutions, and technology infrastructure.</p>
+                <div class="social-links">
+                    <a href="https://twitter.com/thatkimaisa" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/254768973995" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+254750818748/+254768973995"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:info@kohtech.co.ke"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#services">CCTV Installation</a></li>
+                    <li><a href="#services">ICT Consultation</a></li>
+                    <li><a href="#services">Security Systems</a></li>
+                    <li><a href="#services">Networking Solutions</a></li>
+                    <li><a href="#services">Point of Sale</a></li>
+                    <li><a href="#services">Technical Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> 0750 818 748/0768 973 995</p>
+                <p><i class="fab fa-whatsapp"></i> 0768 973 995</p>
+                <p><i class="fas fa-envelope"></i> info@kohtech.co.ke</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 KOHTECH SOFTWARES AND SECURITY SOLUTIONS. All Rights Reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Professional CCTV Installation & Security Systems Provider in Kenya</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/254768973995" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (window.innerWidth <= 768) {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
